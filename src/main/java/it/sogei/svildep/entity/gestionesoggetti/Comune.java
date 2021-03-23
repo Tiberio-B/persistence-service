@@ -18,17 +18,17 @@ public class Comune extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_COMUNE_SEQ")
-    private Long pkSequIdComune;
+    private Long idComune;
     @Column(name = "DESC_SIGLA")
-    private String descSigla;
+    private String sigla;
     @Column(name = "DESC_DENOMINAZIONE_COMUNE")
-    private String descDenominazioneComune;
+    private String denominazioneComune;
     @Column(name = "DATA_INIZIO_VALIDITA")
     private LocalDate dataInizioValidita;
     @Column(name = "DATA_FINE_VALIDITA")
     private LocalDate dataFineValidita;
     @Column(name = "CODI_COMUNE")
-    private String codiComune;
+    private String comune;
     @ManyToOne
     @JoinColumn(name = "FK1_PROVINCE_COMUNI")
     private Provincia provincia;

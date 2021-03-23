@@ -17,17 +17,17 @@ public class Indirizzo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_INDIRIZZO")
-    private Long pkSequIdIndirizzo;
+    private Long idIndirizzo;
     @Column(name = "NUME_CIVICO")
-    private String numeCivico;
+    private String civico;
     @Column(name = "INDI_INDIRIZZO")
-    private String indiIndirizzo;
+    private String indirizzo;
     @Column(name = "INDI_CAP")
-    private String indiCap;
+    private String cap;
     @Column(name = "INDI_DETTAGLIO")
-    private String indiDettaglio;
+    private String dettaglio;
     @Column(name = "INDI_RIPARTIZIONE")
-    private String indiRipartizione;
+    private String ripartizione;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_INDIRIZZO_INDIRIZZI")
     private TipoIndirizzo tipoIndirizzo;

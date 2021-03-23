@@ -17,7 +17,7 @@ public class Ruolo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_RUOLO")
-    private Long pkSequIdRuolo;
+    private Long idRuolo;
     @Column(name = "DESC_RUOLO")
-    private String descRuolo;
+    private String ruolo;
 }

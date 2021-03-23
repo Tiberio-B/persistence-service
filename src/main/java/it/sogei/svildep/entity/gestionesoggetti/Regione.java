@@ -18,9 +18,9 @@ public class Regione extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_REGIONE")
-    private Long pkSequIdRegione;
+    private Long idRegione;
     @Column(name = "DESC_DENOMINAZIONE_REGIONE")
-    private String descDenominazioneRegione;
+    private String denominazioneRegione;
     @OneToMany(mappedBy = "regione")
     private Set<Provincia> listaProvince;
 }

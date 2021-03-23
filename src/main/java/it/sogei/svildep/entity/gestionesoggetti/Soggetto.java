@@ -18,9 +18,9 @@ public class Soggetto extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SOGGETTO")
-    private Long pkSequIdSoggetto;
+    private Long idSoggetto;
     @Column(name = "CODI_CODICE_FISCALE")
-    private String codiCodiceFiscale;
+    private String codiceFiscale;
     @Column(name = "FLAG_CERTIFICATO_AT_SN")
     @Enumerated(EnumType.STRING)
     private FlagSN flagCertificatoAtSN;

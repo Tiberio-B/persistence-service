@@ -17,7 +17,7 @@ public class TipoUnita extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_TIPO_UNITA")
-    private Long pkSequIdTipoUnita;
+    private Long idTipoUnita;
     @Column(name = "DESC_DESCRIZIONE_TIPO_UNITA")
-    private String descDescrizioneTipoUnita;
+    private String descrizioneTipoUnita;
 }

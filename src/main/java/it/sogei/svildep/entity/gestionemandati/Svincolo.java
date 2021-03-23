@@ -18,13 +18,13 @@ public class Svincolo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SVINCOLO")
-    private Long pkSequIdSvincolo;
+    private Long idSvincolo;
     @Column(name = "NUME_NUMERO_PROTOCOLLO")
-    private Long numeNumeroProtocollo;
+    private Long numeroProtocollo;
     @Column(name = "DATA_SVINCOLO")
     private LocalDate dataSvincolo;
     @Column(name = "DESC_ENTE_SVINCOLANTE")
-    private String descEnteSvincolante;
+    private String enteSvincolante;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_ENTE_SVINCOLANTE_SVINCOLO")
     private TipoEnteSvincolante tipoEnteSvincolante;

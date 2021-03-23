@@ -17,7 +17,7 @@ public class Mandato extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_MANDATO")
-    private Long pkSequIdMandato;
+    private Long idMandato;
 
 }
 //TODO: da completare

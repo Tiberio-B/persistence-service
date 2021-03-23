@@ -24,13 +24,13 @@ public class Fascicolo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_FASCICOLO")
-    private Long pkSequIdFascicolo;
+    private Long idFascicolo;
     @Column(name = "DESC_DESCRIZIONE_FILE")
-    private String descDescrizioneFile;
+    private String descrizioneFile;
     @Column(name = "CODI_ESTENSIONE_FILE")
-    private String codiEstensioneFile;
+    private String estensioneFile;
     @Column(name = "DOC_DOCUMENTO_ALLEGATO")
-    private byte[] docDocumentoAllegato;
+    private byte[] documentoAllegato;
     @ManyToOne
     @JoinColumn(name = "FK1_STATI_FASCICOLO_FASCICOLI")
     private StatoFascicolo statoFascicolo;

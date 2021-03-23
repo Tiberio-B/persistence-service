@@ -19,13 +19,13 @@ public class NaturaGiuridica extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_NATURA_GIURIDICA")
-    private Long pkSequIdNaturaGiuridica;
+    private Long naturaGiuridica;
     @Column(name = "DATA_INIZIO_VALIDITA")
     private LocalDate dataInizioValidita;
     @Column(name = "DATA_FINE_VALIDITA")
     private LocalDate dataFineValidita;
     @Column(name = "DESC_DENOMINAZIONE_NATURA_GIURIDICA")
-    private String descDenominazioneNaturaGiuridica;
+    private String denominazioneNaturaGiuridica;
     @Column(name = "FLAG_CHIUSURA_CA")
     @Enumerated(EnumType.STRING)
     private FlagCA flagChiusuraCA;

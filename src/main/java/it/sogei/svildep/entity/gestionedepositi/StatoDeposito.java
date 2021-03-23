@@ -18,9 +18,9 @@ public class StatoDeposito extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_STATO_DEPOSITO")
-    private Long pkSequIdStatoDeposito;
+    private Long idStatoDeposito;
     @Column(name = "DESC_DESCRIZIONE_STATO_DEPOSITO")
-    private String descDescrizioneStatoDeposito;
+    private String descrizioneStatoDeposito;
     @ManyToOne
     @JoinColumn(name = "FK1_RUOLI_STATI_DEPOSITO")
     private Ruolo ruolo;

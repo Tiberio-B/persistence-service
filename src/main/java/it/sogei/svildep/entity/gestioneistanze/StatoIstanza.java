@@ -17,9 +17,9 @@ public class StatoIstanza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_STATO_ISTANZA")
-    private Long pkSequIdStatoIstanza;
+    private Long idStatoIstanza;
     @Column(name = "DESC_DESCRIZIONE_STATO_ISTANZA")
-    private String descDescrizioneStatoIstanza;
+    private String descrizioneStatoIstanza;
     @ManyToOne
     @JoinColumn(name = "FK1_RUOLI_STATI_ISTANZA")
     private Ruolo ruolo;

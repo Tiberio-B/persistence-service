@@ -17,7 +17,7 @@ public class CategoriaDeposito extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_CATEGORIA_DEPOSITO")
-    private Long pkSequIdCategoria;
+    private Long idCategoria;
     @Column(name = "DESC_DESCRIZIONE_CATEGORIA_DEPOSITO")
-    private String descDescrizioneCategoriaDeposito;
+    private String descrizioneCategoriaDeposito;
 }

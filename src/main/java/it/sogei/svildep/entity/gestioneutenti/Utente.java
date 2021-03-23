@@ -19,13 +19,13 @@ public class Utente extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_UTENTE")
-    private Long pkSequIdUtente;
+    private Long idUtente;
     @Column(name = "PERS_NOME")
-    private String persNome;
+    private String nome;
     @Column(name = "PERS_COGNOME")
-    private String persCognome;
+    private String cognome;
     @Column(name = "CODI_CODICE_FISCALE")
-    private String codiCodiceFiscale;
+    private String codiceFiscale;
     @Column(name = "DATA_INIZIO")
     private LocalDate dataInizio;
     @Column(name = "DATA_FINE")

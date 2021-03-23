@@ -17,11 +17,11 @@ public class Versante extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_VERSANTE")
-    private Long pkSequIdVersante;
+    private Long idVersante;
     @Column(name = "DESC_NOME")
-    private String descNome;
+    private String nome;
     @Column(name = "DESC_COGNOME")
-    private String descCognome;
+    private String cognome;
     @Column(name = "CODI_CODICE_FISCALE")
-    private String codiCodiceFiscale;
+    private String codiceFiscale;
 }

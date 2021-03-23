@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 public abstract class BaseEntity {
 
     @Column(name = "NUME_ID_UTENTE_INSERIMENTO")
-    private Long numeIdUtenteInserimento;
+    private Long idUtenteInserimento;
 
     @Column(name = "DTTM_TIMESTAMP_INSERIMENTO")
-    private LocalDateTime dttmTimestampInserimento;
+    private LocalDateTime timestampInserimento;
 
     @Column(name = "NUME_ID_UTENTE_AGGIORNAMENTO")
-    private Long numeIdUtenteAggiornamento;
+    private Long idUtenteAggiornamento;
 
     @Column(name = "DTTM_TIMESTAMP_AGGIORNAMENTO")
-    private LocalDateTime dttmTimestampAggiornamento;
+    private LocalDateTime timestampAggiornamento;
 
 }

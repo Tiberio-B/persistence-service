@@ -21,11 +21,11 @@ public class SoggettoFisico extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SOGGETTO_FISICO")
-    private Long pkSequIdSoggettoFisico;
+    private Long idSoggettoFisico;
     @Column(name = "PERS_NOME")
-    private String persNome;
+    private String nome;
     @Column(name = "PERS_COGNOME")
-    private String persCognome;
+    private String cognome;
     @Column(name = "DATA_NASCITA")
     private LocalDate dataNascita;
     @Column(name = "FLAG_SESSO_MF")

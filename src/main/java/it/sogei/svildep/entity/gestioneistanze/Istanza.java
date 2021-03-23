@@ -23,11 +23,11 @@ public class Istanza extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_ISTANZA")
-    private Long pkSequIdIstanza;
+    private Long idIstanza;
     @Column(name = "NUME_NUMERO_RICHIESTA")
-    private Long numeNumeroRichiesta;
+    private Long numeroRichiesta;
     @Column(name = "NUME_NUMERO_PROTOCOLLO")
-    private Long numeNumeroProtocollo;
+    private Long numeroProtocollo;
     @Column(name = "DATA_PROTOCOLLO")
     private LocalDate dataProtocollo;
     @Column(name = "CODI_CODICE_PAGOPA")
@@ -35,13 +35,13 @@ public class Istanza extends BaseEntity {
     @Column(name = "IMPO_IMPORTO_DEPOSITO")
     private Long importoDeposito;
     @Column(name = "DESC_CAUSALE_DEPOSITO")
-    private String descCausaleDeposito;
+    private String causaleDeposito;
     @Column(name = "DESC_DAT_PROCEDIMENTO_TRIBUNALE")
-    private String descDatProcedimentoTribunale;
+    private String datProcedimentoTribunale;
     @Column(name = "IMPO_IMPORTO_RESTITUZIONE_DEPOSITO")
     private Double importoRestituzioneDeopsito;
     @Column(name = "DESC_MOTIVAZIONE_INVIO_DST")
-    private String descMotivazioneInvioDST;
+    private String motivazioneInvioDST;
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_ISTANZE")
     private Deposito deposito;

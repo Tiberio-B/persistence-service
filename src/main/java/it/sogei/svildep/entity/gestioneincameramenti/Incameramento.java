@@ -21,13 +21,13 @@ public class Incameramento extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_INCAMERAMENTO")
-    private Long pkSequIdIncameramento;
+    private Long idIncameramento;
     @Column(name = "CODI_NUMERO_PROTOCOLLO_RICHIESTA_INCAMERAMENTO")
-    private String codiNumeroProtocolloRichiestaIncameramento;
+    private String numeroProtocolloRichiestaIncameramento;
     @Column(name = "DATA_PROTOCOLLO_RICHIESTA_INCAMERAMENTO")
     private LocalDate dataProtocolloRichiestaIncameramento;
     @Column(name = "IMPO_IMPORTO_DA_INCAMERARE")
-    private Double impoImportoDaIncamerare;
+    private Double importoDaIncamerare;
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_INCAMERAMENTI")
     private Deposito deposito;

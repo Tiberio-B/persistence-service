@@ -21,20 +21,20 @@ public class Deposito extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_DEPOSITO")
-    private Long pkSequIdDeposito;
+    private Long idDeposito;
     @Column(name = "DATA_APERTURA_DEPOSITO")
     private LocalDate dataAperturaDeposito;
     @Column(name = "IMPO_IMPORTO_INIZIALE")
-    private Double impoImportoIniziale;
+    private Double importoIniziale;
     @Column(name = "NUME_NUMERO_NAZIONALE")
-    private Long numeNumeroNazionale;
+    private Long numeroNazionale;
     @Column(name = "NUME_NUMERO_LOCALE")
-    private Long numeNumeroLocale;
+    private Long numeroLocale;
     @Column(name = "FLAG_SPECIE_BC")
     @Enumerated(EnumType.STRING)
     private FlagBC flagSpecieBC;
     @Column(name = "IMPO_IMPORTO_INTERESSI_ANTE_2001")
-    private Double impoImportoInteressiAnte2001;
+    private Double importoInteressiAnte2001;
     @Column(name = "FLAG_VERIFICA_ANTE_2001_SN")
     @Enumerated(EnumType.STRING)
     private FlagSN flagVerificaAnte2001SN;
@@ -57,23 +57,23 @@ public class Deposito extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private FlagSN flagEsproprioSN;
     @Column(name = "DESC_NOTE")
-    private String descNote;
+    private String note;
     @Column(name = "NUME_ID_DEPOSITO_OLD")
-    private Long numeIdDepositoOld;
+    private Long idDepositoOld;
     @Column(name = "NUME_ID_PAGOPA")
-    private Long numeIdPagoPA;
+    private Long idPagoPA;
     @Column(name = "DATA_PERFEZIONAMENTO")
     private LocalDate dataPerfezionamento;
     @Column(name = "IMPO_IMPORTO_VERSAMENTO")
-    private Double impoImportoVersamento;
+    private Double importoVersamento;
     @Column(name = "CODI_LP_NUMERO_LIBRETTO")
-    private String codiLpNumeroLibretto;
+    private String numeroLibretto;
     @Column(name = "CODI_LP_NUMERO_REGISTRO")
-    private String codiLpNumeroRegistro;
+    private String numeroRegistro;
     @Column(name = "CODI_LP_NUMERO_FASCICOLO")
-    private String codiLpNumeroFascicolo;
+    private String numeroFascicolo;
     @Column(name = "PERS_LP_NOMINATIVO_BENEFICIARIO")
-    private String persLpNominativoBeneficiario;
+    private String nominativoBeneficiario;
     @OneToOne
     @JoinColumn(name = "FK1_VERSANTI_DEPOSITI")
     private Versante versante;

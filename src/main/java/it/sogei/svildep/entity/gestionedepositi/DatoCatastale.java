@@ -18,15 +18,15 @@ public class DatoCatastale extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_DATO_CATASTALE")
-    private Long pkSequIdDatoCatastale;
+    private Long idDatoCatastale;
     @Column(name = "DESC_SEZIONE_URBANA")
-    private String descSezioneUrbana;
+    private String sezioneUrbana;
     @Column(name = "DESC_FOGLIO")
-    private String descFoglio;
+    private String foglio;
     @Column(name = "DESC_SUBALTERNO")
-    private String descSubalterno;
+    private String subalterno;
     @Column(name = "DESC_PARTICELLA")
-    private String descParticella;
+    private String particella;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_CATASTO_DATI_CATASTALI")
     private TipoCatasto tipoCatasto;

@@ -17,15 +17,15 @@ public class SoggettoGiuridico extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SOGGETTO_GIURIDICO")
-    private Long pkSequIdSoggettoGiuridico;
+    private Long idSoggettoGiuridico;
     @Column(name = "PERS_RAGIONE_SOCIALE")
-    private String persRagioneSociale;
+    private String ragioneSociale;
     @Column(name = "DESC_CCIAA")
-    private String descCCIAA;
+    private String CCIAA;
     @Column(name = "CODI_PARTITA_IVA")
-    private String codiPartitaIVA;
+    private String partitaIVA;
     @Column(name = "DESC_DENOMINAZIONE_DITTA")
-    private String descDenominazioneDitta;
+    private String denominazioneDitta;
     @OneToOne
     @JoinColumn(name = "FK1_SOGGETTI_SOGGETTI_GIURIDICI")
     private Soggetto soggetto;

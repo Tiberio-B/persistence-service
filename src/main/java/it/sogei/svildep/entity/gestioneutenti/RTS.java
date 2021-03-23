@@ -18,13 +18,13 @@ public class RTS extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_RTS")
-    private Long pkSequIdRTS;
+    private Long idRTS;
     @Column(name = "DESC_DENOMINAZIONE_RTS")
-    private String descDenominazioneRTS;
+    private String denominazioneRTS;
     @Column(name = "TELE_TELEFONO")
-    private String teleTelefono;
+    private String telefono;
     @Column(name = "INDI_PEC")
-    private String indiPEC;
+    private String PEC;
     @ManyToOne
     @JoinColumn(name = "FK1_COMUNI_RTS")
     private Comune comune;

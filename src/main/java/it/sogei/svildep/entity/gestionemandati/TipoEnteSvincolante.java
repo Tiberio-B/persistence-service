@@ -17,7 +17,7 @@ public class TipoEnteSvincolante extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_TIPO_ENTE_SVINCOLANTE")
-    private Long pkSequIdTipoEnteSvincolante;
+    private Long idTipoEnteSvincolante;
     @Column(name = "DESC_DESCRIZIONE_TIPO_ENTE_SVINCOLANTE")
-    private Long descDescrizioneTipoEnteSvincolante;
+    private Long descrizioneTipoEnteSvincolante;
 }
