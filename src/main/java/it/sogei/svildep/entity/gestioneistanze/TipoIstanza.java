@@ -17,7 +17,7 @@ public class TipoIstanza extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_TIPO_ISTANZA")
-    private Long idTipoIstanza;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_ISTANZA")
     private String descrizioneTipoIstanza;
 }

@@ -17,7 +17,7 @@ public class TipoAllegato extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_TIPO_ALLEGATO")
-    private Long idTipoAllegato;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_ALLEGATO")
     private String descrizioneTipoAllegato;
 }

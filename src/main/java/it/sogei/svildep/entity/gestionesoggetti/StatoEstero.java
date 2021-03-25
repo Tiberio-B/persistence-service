@@ -17,7 +17,7 @@ public class StatoEstero extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_STATO_ESTERO")
-    private Long idStatoEstero;
+    private Long id;
     @Column(name = "DESC_DENOMINAZIONE_STATO_ESTERO")
     private String denominazioneStatoEstero;
 }

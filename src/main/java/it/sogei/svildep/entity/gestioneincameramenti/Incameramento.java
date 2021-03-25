@@ -21,7 +21,7 @@ public class Incameramento extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_INCAMERAMENTO")
-    private Long idIncameramento;
+    private Long id;
     @Column(name = "CODI_NUMERO_PROTOCOLLO_RICHIESTA_INCAMERAMENTO")
     private String numeroProtocolloRichiestaIncameramento;
     @Column(name = "DATA_PROTOCOLLO_RICHIESTA_INCAMERAMENTO")

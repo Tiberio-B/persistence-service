@@ -18,7 +18,7 @@ public class Svincolo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SVINCOLO")
-    private Long idSvincolo;
+    private Long id;
     @Column(name = "NUME_NUMERO_PROTOCOLLO")
     private Long numeroProtocollo;
     @Column(name = "DATA_SVINCOLO")

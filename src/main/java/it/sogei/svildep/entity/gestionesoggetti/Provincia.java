@@ -18,7 +18,7 @@ public class Provincia extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_PROVINCIA")
-    private Long idProvincia;
+    private Long id;
     @Column(name = "DESC_DENOMINAZIONE_PROVINCIA")
     private String denominazioneProvincia;
     @ManyToOne

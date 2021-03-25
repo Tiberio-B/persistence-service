@@ -17,7 +17,7 @@ public class StatoIstanza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_STATO_ISTANZA")
-    private Long idStatoIstanza;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_ISTANZA")
     private String descrizioneStatoIstanza;
     @ManyToOne

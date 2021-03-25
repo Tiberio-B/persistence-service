@@ -17,7 +17,7 @@ public class StatoIncameramento extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_STATO_INCAMERAMENTO")
-    private Long idStatoIncameramento;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_INCAMERAMENTO")
     private String descrizioneStatoIncameramento;
     @ManyToOne

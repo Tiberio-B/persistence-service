@@ -17,7 +17,7 @@ public class SoggettoGiuridico extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SOGGETTO_GIURIDICO")
-    private Long idSoggettoGiuridico;
+    private Long id;
     @Column(name = "PERS_RAGIONE_SOCIALE")
     private String ragioneSociale;
     @Column(name = "DESC_CCIAA")

@@ -19,7 +19,7 @@ public class NaturaGiuridica extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_NATURA_GIURIDICA")
-    private Long naturaGiuridica;
+    private Long id;
     @Column(name = "DATA_INIZIO_VALIDITA")
     private LocalDate dataInizioValidita;
     @Column(name = "DATA_FINE_VALIDITA")

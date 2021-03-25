@@ -11,6 +11,10 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class BaseEntity {
 
+    public abstract Long getId();
+
+    public abstract void setId(Long id);
+
     @Column(name = "NUME_ID_UTENTE_INSERIMENTO")
     private Long idUtenteInserimento;
 

@@ -18,7 +18,7 @@ public class Pignoramento extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_PIGNORAMENTO")
-    private Long idPignoramento;
+    private Long id;
     @Column(name = "DATA_NOTIFICA_PIGNORAMENTO")
     private LocalDate dataNotificaPignoramento;
 }

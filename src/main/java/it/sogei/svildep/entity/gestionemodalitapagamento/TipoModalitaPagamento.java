@@ -17,7 +17,7 @@ public class TipoModalitaPagamento extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_TIPO_MODALITA_PAGAMENTO")
-    private Long idTipoModalitaPagamento;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_MODALITA_PAGAMENTO")
     private String descrizioneModalitaPagamento;
 }

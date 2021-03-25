@@ -19,7 +19,7 @@ public class WorkflowIstanza extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_WORKFLOW_ISTANZA")
-    private Long idWorkflowIstanza;
+    private Long id;
     @ManyToOne
     @JoinColumn(name = "FK1_STATI_ISTANZE_WORKFLOW_ISTANZA")
     private StatoIstanza statoIstanza;

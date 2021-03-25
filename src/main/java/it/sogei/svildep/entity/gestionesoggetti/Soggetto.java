@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -18,7 +19,7 @@ public class Soggetto extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SOGGETTO")
-    private Long idSoggetto;
+    private Long id;
     @Column(name = "CODI_CODICE_FISCALE")
     private String codiceFiscale;
     @Column(name = "FLAG_CERTIFICATO_AT_SN")
@@ -27,4 +28,6 @@ public class Soggetto extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_SOGGETTO_SOGGETTI")
     private TipoSoggetto tipoSoggetto;
+    @OneToMany(mappedBy = "soggetto")
+    private List<Indirizzo> indirizzi;
 }

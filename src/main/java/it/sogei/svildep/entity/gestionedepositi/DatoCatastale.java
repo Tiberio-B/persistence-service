@@ -18,7 +18,7 @@ public class DatoCatastale extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_DATO_CATASTALE")
-    private Long idDatoCatastale;
+    private Long id;
     @Column(name = "DESC_SEZIONE_URBANA")
     private String sezioneUrbana;
     @Column(name = "DESC_FOGLIO")

@@ -24,7 +24,7 @@ public class Fascicolo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_FASCICOLO")
-    private Long idFascicolo;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_FILE")
     private String descrizioneFile;
     @Column(name = "CODI_ESTENSIONE_FILE")

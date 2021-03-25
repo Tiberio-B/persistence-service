@@ -17,7 +17,7 @@ public class Versante extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_VERSANTE")
-    private Long idVersante;
+    private Long id;
     @Column(name = "DESC_NOME")
     private String nome;
     @Column(name = "DESC_COGNOME")

@@ -19,7 +19,7 @@ public class AccertamentoDM40 extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_ACCERTAMENTO_DM40")
-    private Long idAccertamentoDM40;
+    private Long id;
     @Column(name = "DATA_ACCERTAMENTO")
     private LocalDate dataAccertamento;
     @Column(name = "CODI_CODICE_FISCALE_SOGGETTO")

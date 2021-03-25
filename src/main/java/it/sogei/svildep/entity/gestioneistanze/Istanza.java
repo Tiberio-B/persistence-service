@@ -23,7 +23,7 @@ public class Istanza extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_ISTANZA")
-    private Long idIstanza;
+    private Long id;
     @Column(name = "NUME_NUMERO_RICHIESTA")
     private Long numeroRichiesta;
     @Column(name = "NUME_NUMERO_PROTOCOLLO")

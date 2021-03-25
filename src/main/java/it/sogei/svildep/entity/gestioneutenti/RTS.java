@@ -18,7 +18,7 @@ public class RTS extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_RTS")
-    private Long idRTS;
+    private Long id;
     @Column(name = "DESC_DENOMINAZIONE_RTS")
     private String denominazioneRTS;
     @Column(name = "TELE_TELEFONO")

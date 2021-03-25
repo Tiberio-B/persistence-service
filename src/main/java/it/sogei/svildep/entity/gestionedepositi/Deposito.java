@@ -21,7 +21,7 @@ public class Deposito extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_DEPOSITO")
-    private Long idDeposito;
+    private Long id;
     @Column(name = "DATA_APERTURA_DEPOSITO")
     private LocalDate dataAperturaDeposito;
     @Column(name = "IMPO_IMPORTO_INIZIALE")

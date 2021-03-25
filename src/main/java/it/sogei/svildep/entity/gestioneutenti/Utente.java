@@ -19,7 +19,7 @@ public class Utente extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_UTENTE")
-    private Long idUtente;
+    private Long id;
     @Column(name = "PERS_NOME")
     private String nome;
     @Column(name = "PERS_COGNOME")

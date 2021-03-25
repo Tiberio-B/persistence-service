@@ -1,5 +1,6 @@
 package it.sogei.svildep.entity.gestionesoggetti;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import it.sogei.svildep.entity.base.BaseEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -17,7 +18,7 @@ public class Indirizzo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_INDIRIZZO")
-    private Long idIndirizzo;
+    private Long id;
     @Column(name = "NUME_CIVICO")
     private String civico;
     @Column(name = "INDI_INDIRIZZO")
@@ -33,6 +34,7 @@ public class Indirizzo extends BaseEntity {
     private TipoIndirizzo tipoIndirizzo;
     @ManyToOne
     @JoinColumn(name = "FK1_SOGGETTI_INDIRIZZI")
+    @JsonIgnore
     private Soggetto soggetto;
     @ManyToOne
     @JoinColumn(name = "FK1_COMUNI_INDIRIZZI")

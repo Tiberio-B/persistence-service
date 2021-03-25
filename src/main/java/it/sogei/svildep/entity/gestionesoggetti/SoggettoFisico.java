@@ -21,20 +21,28 @@ public class SoggettoFisico extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_SOGGETTO_FISICO")
-    private Long idSoggettoFisico;
+    private Long id;
     @Column(name = "PERS_NOME")
     private String nome;
     @Column(name = "PERS_COGNOME")
     private String cognome;
     @Column(name = "DATA_NASCITA")
     private LocalDate dataNascita;
+
+    @ManyToOne
+    @JoinColumn(name = "FK1_COMUNI_SOGGETTI_FISICI")
+    private Comune comuneNascita;
+    @ManyToOne
+    @JoinColumn(name = "FK1_STATI_ESTERI_SOGGETTI_FISICI")
+    private StatoEstero statoEsteroNascita;
+
     @Column(name = "FLAG_SESSO_MF")
     @Enumerated(EnumType.STRING)
     private FlagSessoMF flagSessoMF;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "FK1_SOGGETTI_SOGGETTI_FISICI")
     private Soggetto soggetto;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "FK1_SOGGETTI_GIURIDICI_SOGGETTI_FISICI")
     private SoggettoGiuridico soggettoGiuridico;
 }

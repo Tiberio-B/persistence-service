@@ -17,7 +17,7 @@ public class StatoFascicolo extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_STATI_FASCICOLO")
-    private Long idStatiFascicolo;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_FASCICOLO")
     private String descrizioneStatoFascicolo;
 }

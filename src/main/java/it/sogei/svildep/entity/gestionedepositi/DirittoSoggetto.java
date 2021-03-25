@@ -18,7 +18,7 @@ public class DirittoSoggetto extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_DIRITTO_SOGGETTO")
-    private Long idDirittoSoggetto;
+    private Long id;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_DIRITTO_SOGGETTO_DIRITTI_SOGGETTO")
     private TipoDirittoSoggetto tipoDirittoSoggetto;

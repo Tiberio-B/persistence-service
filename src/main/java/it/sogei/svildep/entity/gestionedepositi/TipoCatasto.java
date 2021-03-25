@@ -17,7 +17,7 @@ public class TipoCatasto extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_TIPO_CATASTO")
-    private Long idTipoCatasto;
+    private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_CATASTO")
     private String descrizioneTipoCatasto;
 }
