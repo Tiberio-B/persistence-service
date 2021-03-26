@@ -10,14 +10,14 @@ import javax.persistence.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
 @Entity
-@Table(name = "D_TIPI_UNITA")
-public class TipoUnita extends BaseEntity {
+@Table(name = "D_TIPI_SEDE")
+public class TipoSede extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    @Column(name = "PK_SEQU_ID_TIPO_UNITA")
+    @Column(name = "PK_SEQU_ID_TIPO_SEDE")
     private Long id;
-    @Column(name = "DESC_DESCRIZIONE_TIPO_UNITA")
-    private String descrizioneTipoUnita;
+    @Column(name = "DESC_DESCRIZIONE_TIPO_SEDE")
+    private String descrizioneTipoSede;
 }

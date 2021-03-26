@@ -32,7 +32,5 @@ public class SoggettoGiuridico extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_NATURE_GIURIDICHE_SOGGETTI_GIURIDICI")
     private NaturaGiuridica naturaGiuridica;
-    @ManyToOne
-    @JoinColumn(name = "FK1_TIPI_UNITA_SOGGETTI_GIURIDICI")
-    private TipoUnita tipoUnita;
+
 }
