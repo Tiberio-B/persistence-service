@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import it.sogei.svildep.entity.gestionesoggetti.Soggetto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -28,4 +29,7 @@ public class DirittoSoggetto extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_DIRITTI_SOGGETTO")
     private Deposito deposito;
+    @ManyToOne
+    @JoinColumn(name = "FK1_ISTANZE_DIRITTI_SOGGETTO")
+    private Istanza istanza;
 }

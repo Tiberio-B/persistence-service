@@ -53,31 +53,10 @@ public class Istanza extends BaseEntity {
     private CategoriaDeposito categoriaDeposito;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_ISTANZA_ISTANZE")
-    private TipoIstanza tipoIstanza;
+    private TipoIstanza tipo;
     @ManyToOne
-    @JoinColumn(name = "FK1_DIRITTO_SOGGETTO_RICHIEDENTE_ISTANZE")
-    private DirittoSoggetto richiedente;
-    @ManyToOne
-    @JoinColumn(name = "FK2_DIRITTO_SOGGETTO_PROPRIETARIO_ISTANZE")
-    private DirittoSoggetto proprietario;
-    @ManyToOne
-    @JoinColumn(name = "FK3_DIRITTO_SOGGETTO_PROPRIETARIO_ISTANZE")
-    private DirittoSoggetto altroProprietario;
-    @ManyToOne
-    @JoinColumn(name = "FK4_DIRITTO_SOGGETTO_CAUZIONATO_ISTANZE")
-    private DirittoSoggetto enteCauzionato;
-    @ManyToOne
-    @JoinColumn(name = "FK5_DIRITTO_SOGGETTO_DEPOSITANTE_ISTANZE")
-    private DirittoSoggetto depositanteLegale;
-    @ManyToOne
-    @JoinColumn(name = "FK6_DIRITTO_SOGGETTO_ESPROPRIANTE_ISTANZE")
-    private DirittoSoggetto espropriante;
-    @ManyToOne
-    @JoinColumn(name = "FK7_DIRITTO_SOGGETTO_ENTE_ISTANZE")
-    private DirittoSoggetto proprietarioEntePubblico;
-    @ManyToOne
-    @JoinColumn(name = "FK8_DIRITTO_SOGGETTO_EREDE_ISTANZE")
-    private DirittoSoggetto erede;
+    @JoinColumn(name = "FK1_STATI_ISTANZA_ISTANZE")
+    private StatoIstanza stato;
     @OneToOne
     @JoinColumn(name = "FK1_MODALITA_PAGAMENTO_ISTANZE")
     private ModalitaPagamento modalitaPagamento;
