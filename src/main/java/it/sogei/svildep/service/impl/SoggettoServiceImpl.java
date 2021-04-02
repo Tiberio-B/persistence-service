@@ -1,4 +1,4 @@
-package it.sogei.svildep.repository.impl;
+package it.sogei.svildep.service.impl;
 
 import it.sogei.svildep.entity.gestionesoggetti.Soggetto;
 import it.sogei.svildep.repository.SoggettoRepository;
