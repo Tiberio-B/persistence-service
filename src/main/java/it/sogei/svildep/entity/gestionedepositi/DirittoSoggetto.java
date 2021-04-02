@@ -29,7 +29,4 @@ public class DirittoSoggetto extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_DIRITTI_SOGGETTO")
     private Deposito deposito;
-    @ManyToOne
-    @JoinColumn(name = "FK1_ISTANZE_DIRITTI_SOGGETTO")
-    private Istanza istanza;
 }

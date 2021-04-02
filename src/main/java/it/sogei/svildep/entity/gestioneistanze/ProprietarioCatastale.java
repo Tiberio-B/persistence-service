@@ -1,6 +1,8 @@
 package it.sogei.svildep.entity.gestioneistanze;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagSN;
+import it.sogei.svildep.entity.gestionedocumenti.Fascicolo;
 import it.sogei.svildep.entity.gestionesoggetti.TipoSoggetto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,8 +26,13 @@ public class ProprietarioCatastale extends BaseEntity {
     private String nominativoProprietario;
     @Column(name = "CODI_CF_PIVA")
     private String cfPiva;
+    @Column(name = "FLAG_SOGGETTO_IRREPERIBILE_SN")
+    private FlagSN soggettoIrreperibile;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_SOGGETTO_PROPRIETARI_CATASTALI")
     private TipoSoggetto tipoSoggetto;
+    @ManyToOne
+    @JoinColumn(name = "FK1_FASCICOLI_PROPRIETARI_CATASTALI")
+    private Fascicolo fascicolo;
 
 }

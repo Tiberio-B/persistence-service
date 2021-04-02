@@ -5,11 +5,11 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum FlagTipoCoinvolgimento {
+public enum FlagTipoSoggetto {
 
-    A("Autorità ordinante"),
-    B("Presunto beneficiario"),
-    I("Soggetto da individuare");
+    TSF("Soggetto fisico"),
+    TSG("Soggetto giuridico"),
+    TSD("Ditta individuale");
 
     public String descrizione;
 }

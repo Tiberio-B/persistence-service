@@ -6,6 +6,7 @@ import it.sogei.svildep.entity.gestionedepositi.DatoCatastale;
 import it.sogei.svildep.entity.gestionedepositi.Deposito;
 import it.sogei.svildep.entity.gestionedepositi.DirittoSoggetto;
 import it.sogei.svildep.entity.gestionemodalitapagamento.ModalitaPagamento;
+import it.sogei.svildep.entity.gestioneutenti.RTS;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -60,5 +61,17 @@ public class Istanza extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "FK1_MODALITA_PAGAMENTO_ISTANZE")
     private ModalitaPagamento modalitaPagamento;
+    @ManyToOne
+    @JoinColumn(name = "FK1_RTS_INOLTRO_ISTANZE")
+    private RTS rtsInoltro;
+    @ManyToOne
+    @JoinColumn(name = "FK2_RTS_COMPETENTE_ISTANZE")
+    private RTS rtsCompetente;
+    @ManyToOne
+    @JoinColumn(name = "FK1_BENI_ESPROPRIATI_ISTANZE")
+    private BeneEpropriato beneEpropriato;
+    @ManyToOne
+    @JoinColumn(name = "FK1_QUALITA_RICHIEDENTI_ISTANZE")
+    private QualitaRichiedente qualitaRichiedente;
     //TODO: serve il mandato? SI
 }

@@ -75,9 +75,6 @@ public class Deposito extends BaseEntity {
     @Column(name = "PERS_LP_NOMINATIVO_BENEFICIARIO")
     private String nominativoBeneficiario;
     @OneToOne
-    @JoinColumn(name = "FK1_VERSANTI_DEPOSITI")
-    private Versante versante;
-    @OneToOne
     @JoinColumn(name = "FK1_DATI_CATASTALI_DEPOSITI")
     private DatoCatastale datoCatastale;
     @OneToOne

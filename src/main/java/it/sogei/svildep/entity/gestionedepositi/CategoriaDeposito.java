@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagCategoriaDeposito;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,4 +21,6 @@ public class CategoriaDeposito extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_CATEGORIA_DEPOSITO")
     private String descrizioneCategoriaDeposito;
+    @Column(name = "CODI_CODICE_CATEGORIA")
+    private FlagCategoriaDeposito codiceCategoria;
 }

@@ -2,6 +2,7 @@ package it.sogei.svildep.entity.gestioneutenti;
 
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.gestionesoggetti.Comune;
+import it.sogei.svildep.entity.gestionesoggetti.Recapito;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,11 +22,10 @@ public class RTS extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DENOMINAZIONE_RTS")
     private String denominazioneRTS;
-    @Column(name = "TELE_TELEFONO")
-    private String telefono;
-    @Column(name = "INDI_PEC")
-    private String PEC;
     @ManyToOne
     @JoinColumn(name = "FK1_COMUNI_RTS")
     private Comune comune;
+    @ManyToOne
+    @JoinColumn(name = "FK1_RECAPITI_RTS")
+    private Recapito recapito;
 }

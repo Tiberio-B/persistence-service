@@ -23,5 +23,8 @@ public class BeneEpropriato extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_DATI_CATASTALI_BENI_ESPROPRIATI")
     private DatoCatastale datoCatastale;
+    @ManyToOne
+    @JoinColumn(name = "FK1_PROPRIETARI_CATASTALI_BENI_ESPROPRIATI")
+    private ProprietarioCatastale proprietarioCatastale;
 
 }

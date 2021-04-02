@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagTipoDirittoSoggetto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,4 +21,6 @@ public class TipoDirittoSoggetto extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_DIRITTO_SOGGETTO")
     private String descrizioneTipoDirittoSoggetto;
+    @Column(name = "CODI_CODICE_DIRITTO")
+    private FlagTipoDirittoSoggetto codiceDiritto;
 }

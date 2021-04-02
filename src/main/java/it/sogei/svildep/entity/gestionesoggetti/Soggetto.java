@@ -28,6 +28,7 @@ public class Soggetto extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_SOGGETTO_SOGGETTI")
     private TipoSoggetto tipoSoggetto;
-    @OneToMany(mappedBy = "soggetto")
-    private List<Indirizzo> indirizzi;
+    @ManyToOne
+    @JoinColumn(name = "FK1_RECAPITI_SOGGETTI")
+    private Recapito recapito;
 }
