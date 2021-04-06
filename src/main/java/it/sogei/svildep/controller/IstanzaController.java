@@ -1,7 +1,6 @@
 package it.sogei.svildep.controller;
 
 import it.sogei.svildep.dto.MessageDto;
-import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.gestioneistanze.CoinvolgimentoSoggetto;
 import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import it.sogei.svildep.exception.SvildepException;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -29,11 +27,12 @@ public class IstanzaController {
     private final IstanzaServiceImpl service;
 
     @PostMapping
-    public ResponseEntity<MessageDto> post(@RequestBody String istanza, BindingResult bindingResult)
+    public ResponseEntity<MessageDto> post(@RequestBody String[] entities, BindingResult bindingResult)
             throws SvildepException {
         // getValidator().validate(requestDto, bindingResult);
         if (bindingResult.hasErrors()) throw new SvildepException(bindingResult);
-        Istanza entity = JsonOperation.jsonToObject(istanza, Istanza.class);
+        Istanza istanza = JsonOperation.jsonToObject(entities[0], Istanza.class);
+        ArrayList<CoinvolgimentoSoggetto> coinvolgimenti = JsonOperation.jsonToObject(entities[1], ArrayList.class);
         // service.insert();
         MessageDto messageDto = MessageDto.inserimento();
         return ResponseEntity.status(messageDto.getStatus()).body(messageDto);

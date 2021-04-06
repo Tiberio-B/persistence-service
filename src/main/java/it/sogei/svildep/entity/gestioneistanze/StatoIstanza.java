@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestioneistanze;
 
-import it.sogei.svildep.entity.gestioneutenti.Ruolo;
+import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagStatoIstanza;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Getter @Setter
 @Entity
 @Table(name = "D_STATI_ISTANZA")
-public class StatoIstanza {
+public class StatoIstanza extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,8 +20,7 @@ public class StatoIstanza {
     @Column(name = "PK_SEQU_ID_STATO_ISTANZA")
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_ISTANZA")
-    private String descrizioneStatoIstanza;
-    @ManyToOne
-    @JoinColumn(name = "FK1_RUOLI_STATI_ISTANZA")
-    private Ruolo ruolo;
+    private String descrizione;
+
+    private FlagStatoIstanza codice;
 }

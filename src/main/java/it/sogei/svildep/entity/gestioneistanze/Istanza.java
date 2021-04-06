@@ -25,24 +25,29 @@ public class Istanza extends BaseEntity {
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_ISTANZA")
     private Long id;
+
     @Column(name = "NUME_NUMERO_RICHIESTA")
     private Long numeroRichiesta;
+    @Column(name = "DATA_RICHIESTA")
+    private LocalDate dataRichiesta;
+
     @Column(name = "NUME_NUMERO_PROTOCOLLO")
     private Long numeroProtocollo;
     @Column(name = "DATA_PROTOCOLLO")
     private LocalDate dataProtocollo;
-    @Column(name = "CODI_CODICE_PAGOPA")
-    private String codicePagoPA;
+
     @Column(name = "IMPO_IMPORTO_DEPOSITO")
-    private Long importoDeposito;
+    private Double importoDeposito;
     @Column(name = "DESC_CAUSALE_DEPOSITO")
     private String causaleDeposito;
-    @Column(name = "DESC_DAT_PROCEDIMENTO_TRIBUNALE")
-    private String datProcedimentoTribunale;
+
+    @Column(name = "DESC_DATI_PROCEDIMENTO_TRIBUNALE")
+    private String datiProcedimentoTribunale;
     @Column(name = "IMPO_IMPORTO_RESTITUZIONE_DEPOSITO")
-    private Double importoRestituzioneDeopsito;
+    private Double importoRestituzioneDeposito;
     @Column(name = "DESC_MOTIVAZIONE_INVIO_DST")
     private String motivazioneInvioDST;
+
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_ISTANZE")
     private Deposito deposito;
@@ -69,9 +74,11 @@ public class Istanza extends BaseEntity {
     private RTS rtsCompetente;
     @ManyToOne
     @JoinColumn(name = "FK1_BENI_ESPROPRIATI_ISTANZE")
-    private BeneEpropriato beneEpropriato;
+    private BeneEpropriato beneEspropriato;
     @ManyToOne
     @JoinColumn(name = "FK1_QUALITA_RICHIEDENTI_ISTANZE")
     private QualitaRichiedente qualitaRichiedente;
+
+    private Opera opera;
     //TODO: serve il mandato? SI
 }
