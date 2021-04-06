@@ -33,7 +33,7 @@ public class IstanzaController {
         if (bindingResult.hasErrors()) throw new SvildepException(bindingResult);
         Istanza istanza = JsonOperation.jsonToObject(entities[0], Istanza.class);
         ArrayList<CoinvolgimentoSoggetto> coinvolgimenti = JsonOperation.jsonToObject(entities[1], ArrayList.class);
-        // service.insert();
+        service.insert(istanza, coinvolgimenti);
         MessageDto messageDto = MessageDto.inserimento();
         return ResponseEntity.status(messageDto.getStatus()).body(messageDto);
     }

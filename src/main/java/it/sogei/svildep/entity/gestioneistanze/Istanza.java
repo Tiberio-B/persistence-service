@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestioneistanze;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagSN;
 import it.sogei.svildep.entity.gestionedepositi.CategoriaDeposito;
 import it.sogei.svildep.entity.gestionedepositi.DatoCatastale;
 import it.sogei.svildep.entity.gestionedepositi.Deposito;
@@ -45,13 +46,12 @@ public class Istanza extends BaseEntity {
     private Double importoRestituzioneDeposito;
     @Column(name = "DESC_MOTIVAZIONE_INVIO_DST")
     private String motivazioneInvioDST;
+    @Column(name = "FLAG_INSERIMENTO_MANUALE_SN")
+    private FlagSN inserimentoManuale;
 
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_ISTANZE")
     private Deposito deposito;
-    @ManyToOne
-    @JoinColumn(name = "FK1_DATI_CATASTALI_ISTANZE")
-    private DatoCatastale datoCatastale;
     @ManyToOne
     @JoinColumn(name = "FK1_CATEGORIE_DEPOSITO_ISTANZE")
     private CategoriaDeposito categoriaDeposito;
@@ -76,7 +76,8 @@ public class Istanza extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_QUALITA_RICHIEDENTI_ISTANZE")
     private QualitaRichiedente qualitaRichiedente;
-
+    @ManyToOne
+    @JoinColumn(name = "FK1_OPERE_ISTANZE")
     private Opera opera;
     //TODO: serve il mandato? SI
 }
