@@ -35,12 +35,10 @@ public class Istanza extends BaseEntity {
     private Long numeroProtocollo;
     @Column(name = "DATA_PROTOCOLLO")
     private LocalDate dataProtocollo;
-
     @Column(name = "IMPO_IMPORTO_DEPOSITO")
     private Double importoDeposito;
     @Column(name = "DESC_CAUSALE_DEPOSITO")
     private String causaleDeposito;
-
     @Column(name = "DESC_DATI_PROCEDIMENTO_TRIBUNALE")
     private String datiProcedimentoTribunale;
     @Column(name = "IMPO_IMPORTO_RESTITUZIONE_DEPOSITO")
