@@ -5,7 +5,6 @@ import it.sogei.svildep.entity.enums.FlagSN;
 import it.sogei.svildep.entity.gestionedepositi.CategoriaDeposito;
 import it.sogei.svildep.entity.gestionedepositi.DatoCatastale;
 import it.sogei.svildep.entity.gestionedepositi.Deposito;
-import it.sogei.svildep.entity.gestionedepositi.DirittoSoggetto;
 import it.sogei.svildep.entity.gestionemodalitapagamento.ModalitaPagamento;
 import it.sogei.svildep.entity.gestioneutenti.RTS;
 import lombok.EqualsAndHashCode;

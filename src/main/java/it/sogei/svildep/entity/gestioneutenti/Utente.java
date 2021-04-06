@@ -33,4 +33,7 @@ public class Utente extends BaseEntity {
     @Column(name = "FLAG_ABILITATO_SN")
     @Enumerated(EnumType.STRING)
     private FlagSN flagAbilitatoSN;
+    @ManyToOne
+    @JoinColumn(name = "FK1_RUOLI_UTENTI")
+    private Ruolo ruolo;
 }
