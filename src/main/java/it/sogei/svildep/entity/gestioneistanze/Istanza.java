@@ -31,14 +31,12 @@ public class Istanza extends BaseEntity {
     private Long numeroProtocollo;
     @Column(name = "DATA_PROTOCOLLO")
     private LocalDate dataProtocollo;
-    @Column(name = "CODI_CODICE_PAGOPA")
-    private String codicePagoPA;
     @Column(name = "IMPO_IMPORTO_DEPOSITO")
     private Long importoDeposito;
     @Column(name = "DESC_CAUSALE_DEPOSITO")
     private String causaleDeposito;
     @Column(name = "DESC_DAT_PROCEDIMENTO_TRIBUNALE")
-    private String datProcedimentoTribunale;
+    private String datiProcedimentoTribunale;
     @Column(name = "IMPO_IMPORTO_RESTITUZIONE_DEPOSITO")
     private Double importoRestituzioneDeopsito;
     @Column(name = "DESC_MOTIVAZIONE_INVIO_DST")
