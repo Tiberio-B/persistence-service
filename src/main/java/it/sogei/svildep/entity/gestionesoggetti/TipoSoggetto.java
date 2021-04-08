@@ -11,8 +11,8 @@ import javax.persistence.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
 @Entity
-@Table(name = "D_SOGGETTI")
-public class TipoSoggetto  extends BaseEntity {
+@Table(name = "D_TIPI_SOGGETTO")
+public class TipoSoggetto extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

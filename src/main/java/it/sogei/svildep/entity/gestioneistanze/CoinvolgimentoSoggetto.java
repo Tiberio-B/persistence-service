@@ -28,7 +28,7 @@ public class CoinvolgimentoSoggetto extends BaseEntity {
     @JoinColumn(name = "FK1_ISTANZE_COINVOLGIMENTI_SOGGETTO")
     private Istanza istanza;
     @ManyToOne
-    @JoinColumn(name = "FK1_TIPI_COINVOLGIMENTO_SOGGETTI_COINVOLGIMENTI_SOGGETTO")
+    @JoinColumn(name = "FK1_TIPI_COINVOLGIMENTO_SOGGETTO_COINVOLGIMENTI_SOGGETTO")
     private TipoCoinvolgimentoSoggetto tipoCoinvolgimentoSoggetto;
     @ManyToOne
     @JoinColumn(name = "FK1_SOGGETTI_ULTERIORI_COINVOLGIMENTI_SOGGETTO")

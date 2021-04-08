@@ -1,26 +1,30 @@
 package it.sogei.svildep.service.impl;
 
-import it.sogei.svildep.entity.gestioneistanze.CoinvolgimentoSoggetto;
-import it.sogei.svildep.entity.gestioneistanze.Istanza;
+import it.sogei.svildep.dto.IstanzaDettaglioDto;
+import it.sogei.svildep.mapper.istanza.IstanzaMapper;
 import it.sogei.svildep.repository.IstanzaRepository;
 import it.sogei.svildep.service.IstanzaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IstanzaServiceImpl implements IstanzaService {
 
     private final IstanzaRepository repository;
 
-    @Autowired
-    public IstanzaServiceImpl(IstanzaRepository repository) {
-        this.repository = repository;
+    private final IstanzaMapper istanzaMapper;
+
+//    TODO: Dto diverso da quello di dettaglio, DA FARE
+    public List<IstanzaDettaglioDto> getAll() {
+        return istanzaMapper.mapEntityToDto(repository.findAll());
     }
 
-    @Override
-    public void insert(Istanza istanza, List<CoinvolgimentoSoggetto> coinvolgimenti) {
-
+    public IstanzaDettaglioDto get(Long id) {
+        return istanzaMapper.mapEntityToDto(repository.findById(id).orElse(null));
     }
+
+
 }

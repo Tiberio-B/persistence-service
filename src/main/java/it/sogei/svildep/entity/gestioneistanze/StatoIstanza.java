@@ -21,6 +21,6 @@ public class StatoIstanza extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_ISTANZA")
     private String descrizione;
-
+    @Column(name = "CODI_CODICE_STATO_ISTANZA")
     private FlagStatoIstanza codice;
 }

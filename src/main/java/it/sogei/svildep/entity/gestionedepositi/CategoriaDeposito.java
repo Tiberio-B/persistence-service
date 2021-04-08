@@ -21,6 +21,6 @@ public class CategoriaDeposito extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_CATEGORIA_DEPOSITO")
     private String descrizioneCategoriaDeposito;
-    @Column(name = "CODI_CODICE_CATEGORIA")
+    @Column(name = "CODI_CODICE_CATEGORIA_DEPOSITO")
     private FlagCategoriaDeposito codiceCategoria;
 }
