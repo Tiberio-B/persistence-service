@@ -1,6 +1,6 @@
 package it.sogei.svildep.controller;
 
-import it.sogei.svildep.dto.IstanzaDettaglioDto;
+import it.sogei.svildep.dto.IstanzaDto;
 import it.sogei.svildep.exception.SvildepException;
 import it.sogei.svildep.service.impl.IstanzaServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -21,12 +21,12 @@ public class IstanzaController {
     private final IstanzaServiceImpl service;
 
     @GetMapping
-    public ResponseEntity<List<IstanzaDettaglioDto>> lista(){
+    public ResponseEntity<List<IstanzaDto>> lista(){
         return ResponseEntity.ok().body(service.getAll());
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<IstanzaDettaglioDto> dettaglio(@PathVariable Long id, BindingResult bindingResult) throws SvildepException {
+    public ResponseEntity<IstanzaDto> dettaglio(@PathVariable Long id, BindingResult bindingResult) throws SvildepException {
         if(bindingResult.hasErrors()){
             throw new SvildepException(bindingResult);
         }
