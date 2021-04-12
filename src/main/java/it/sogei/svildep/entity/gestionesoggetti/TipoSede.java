@@ -22,5 +22,6 @@ public class TipoSede extends BaseEntity {
     @Column(name = "DESC_DESCRIZIONE_TIPO_SEDE")
     private String descrizioneTipoSede;
     @Column(name = "CODI_CODICE_TIPO_SEDE")
+    @Enumerated(EnumType.STRING)
     private FlagTipoSede codiceTipoSede;
 }

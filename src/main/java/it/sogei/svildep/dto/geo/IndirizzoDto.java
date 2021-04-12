@@ -9,5 +9,6 @@ public class IndirizzoDto {
 
     private String descrizioneIndirizzo;
     private String numCivico;
+    private String tipoIndirizzo;
 
 }

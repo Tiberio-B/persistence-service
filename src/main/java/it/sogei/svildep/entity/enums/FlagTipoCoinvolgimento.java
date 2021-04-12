@@ -7,9 +7,16 @@ import lombok.Getter;
 @Getter
 public enum FlagTipoCoinvolgimento {
 
-    A("Autorità ordinante"),
-    B("Presunto beneficiario"),
-    I("Soggetto da individuare");
+    CSR("Richiedente"),
+    CSP("Proprietario"),
+    CSC("Ente cauzionato"),
+    CSE("Autorità espropriante"),
+    CSO("Autorità ordinante"),
+    CSB("Presunto beneficiario"),
+    CSU("Soggetto ulteriore"),
+    CSD("Depositante legale"),
+    CSG("General contractor");
+
 
     public String descrizione;
 }

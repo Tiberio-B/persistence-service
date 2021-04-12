@@ -17,7 +17,7 @@ public class Comune extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    @Column(name = "PK_SEQU_ID_COMUNE_SEQ")
+    @Column(name = "PK_SEQU_ID_COMUNE")
     private Long id;
     @Column(name = "DESC_SIGLA")
     private String sigla;

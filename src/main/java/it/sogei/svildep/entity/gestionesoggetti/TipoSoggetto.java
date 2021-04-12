@@ -21,6 +21,7 @@ public class TipoSoggetto extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_SOGGETTO")
     private String descrizioneTipoSoggetto;
-    @Column(name = "CODI_CODICE_TIPO")
+    @Column(name = "CODI_CODICE_TIPO_SOGGETTO")
+    @Enumerated(EnumType.STRING)
     private FlagTipoSoggetto codiceTipo;
 }

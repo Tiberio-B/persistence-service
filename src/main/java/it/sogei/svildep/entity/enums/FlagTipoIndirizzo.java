@@ -3,12 +3,12 @@ package it.sogei.svildep.entity.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
-public enum FlagSessoMF {
+@Getter
+public enum FlagTipoIndirizzo {
 
-    M("Maschio"),
-    F("Femmina");
+    TIR("Residenza"),
+    TID("Domicilio");
 
-    private String descrizione;
+    public String descrizione;
 }

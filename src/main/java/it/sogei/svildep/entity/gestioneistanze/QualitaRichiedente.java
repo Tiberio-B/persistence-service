@@ -23,5 +23,6 @@ public class QualitaRichiedente extends BaseEntity {
     @Column(name = "DESC_DESCRIZIONE_QUALITA_RICHIEDENTE")
     private String descrizioneQualita;
     @Column(name = "CODI_CODICE_QUALITA_RICHIEDENTE")
+    @Enumerated(EnumType.STRING)
     private FlagQualitaRichiedente codiceQualita;
 }

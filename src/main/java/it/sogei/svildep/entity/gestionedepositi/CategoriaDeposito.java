@@ -22,5 +22,6 @@ public class CategoriaDeposito extends BaseEntity {
     @Column(name = "DESC_DESCRIZIONE_CATEGORIA_DEPOSITO")
     private String descrizioneCategoriaDeposito;
     @Column(name = "CODI_CODICE_CATEGORIA_DEPOSITO")
+    @Enumerated(EnumType.STRING)
     private FlagCategoriaDeposito codiceCategoria;
 }

@@ -46,6 +46,7 @@ public class Istanza extends BaseEntity {
     @Column(name = "DESC_MOTIVAZIONE_INVIO_DST")
     private String motivazioneInvioDST;
     @Column(name = "FLAG_INSERIMENTO_MANUALE_SN")
+    @Enumerated(EnumType.STRING)
     private FlagSN inserimentoManuale;
 
     @ManyToOne

@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestionesoggetti;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagTipoIndirizzo;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,4 +21,7 @@ public class TipoIndirizzo extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_INDIRIZZO")
     private String descrizioneTipoIndirizzo;
+    @Column(name = "CODI_CODICE_TIPO_INDIRIZZO")
+    @Enumerated(EnumType.STRING)
+    private FlagTipoIndirizzo TipoIndirizzo;
 }

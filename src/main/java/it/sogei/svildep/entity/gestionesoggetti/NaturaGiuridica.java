@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
 @Entity
-@Table(name = "D_ACCERTAMENTI_DM40")
+@Table(name = "D_NATURE_GIURIDICHE")
 public class NaturaGiuridica extends BaseEntity {
 
     @Id

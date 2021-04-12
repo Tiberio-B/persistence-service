@@ -22,6 +22,7 @@ public class TipoCoinvolgimentoSoggetto extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_COINVOLGIMENTO_SOGGETTO")
     private String descrizioneTipo;
-    @Column(name = "CODI_CODICE_COINVOLGIMENTO_SOGGETTO")
+    @Column(name = "CODI_CODICE_TIPO_COINVOLGIMENTO_SOGGETTO")
+    @Enumerated(EnumType.STRING)
     private FlagTipoCoinvolgimento flagTipoCoinvolgimento;
 }
