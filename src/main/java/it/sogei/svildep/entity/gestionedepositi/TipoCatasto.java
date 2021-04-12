@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.enums.FlagTipoCatasto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,4 +21,6 @@ public class TipoCatasto extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_TIPO_CATASTO")
     private String descrizioneTipoCatasto;
+    @Column(name = "CODI_CODICE_TIPO_CATASTO")
+    private FlagTipoCatasto codiceTipoCatasto;
 }

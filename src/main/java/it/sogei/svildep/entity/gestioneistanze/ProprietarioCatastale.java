@@ -27,6 +27,7 @@ public class ProprietarioCatastale extends BaseEntity {
     @Column(name = "CODI_CF_PIVA")
     private String cfPiva;
     @Column(name = "FLAG_SOGGETTO_IRREPERIBILE_SN")
+    @Enumerated(EnumType.STRING)
     private FlagSN soggettoIrreperibile;
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_SOGGETTO_PROPRIETARI_CATASTALI")

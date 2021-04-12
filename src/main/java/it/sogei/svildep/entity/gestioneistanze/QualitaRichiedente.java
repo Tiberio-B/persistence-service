@@ -22,6 +22,6 @@ public class QualitaRichiedente extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_QUALITA_RICHIEDENTE")
     private String descrizioneQualita;
-    @Column(name = "CODI_CODICE_QUALITA")
+    @Column(name = "CODI_CODICE_QUALITA_RICHIEDENTE")
     private FlagQualitaRichiedente codiceQualita;
 }
