@@ -2,5 +2,5 @@ package it.sogei.svildep.exception;
 
 public interface Messages {
 
-    String inserimento = "ok";
+    String soggettoNonPresente = "Uno o più dei soggetti specificati non e' censito.";
 }

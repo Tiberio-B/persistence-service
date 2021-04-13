@@ -10,6 +10,8 @@ import it.sogei.svildep.entity.gestioneistanze.CoinvolgimentoSoggetto;
 import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import it.sogei.svildep.entity.gestionesoggetti.Comune;
 import it.sogei.svildep.entity.gestionesoggetti.Soggetto;
+import it.sogei.svildep.exception.Messages;
+import it.sogei.svildep.exception.SvildepException;
 import it.sogei.svildep.mapper.geo.IndirizzoMapper;
 import it.sogei.svildep.mapper.istanza.IstanzaDettaglioMapper;
 import it.sogei.svildep.mapper.istanza.IstanzaMapper;
@@ -19,6 +21,7 @@ import it.sogei.svildep.mapper.soggetto.SoggettoGiuridicoMapper;
 import it.sogei.svildep.repository.*;
 import it.sogei.svildep.service.IstanzaService;
 import lombok.RequiredArgsConstructor;
+import org.aspectj.bridge.Message;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -54,7 +57,7 @@ public class IstanzaServiceImpl implements IstanzaService {
         return istanzaMapper.mapEntityToDto(istanzaRepository.findAll());
     }
 
-    public IstanzaDettaglioDto get(Long id) {
+    public IstanzaDettaglioDto get(Long id) throws SvildepException {
         Istanza istanza = istanzaRepository.findById(id).orElse(null);
         IstanzaDettaglioDto dto = istanzaDettaglioMapper.mapEntityToDto(istanza);
         dto.setSoggetti(getCoinvolgimenti(istanza));
@@ -62,7 +65,7 @@ public class IstanzaServiceImpl implements IstanzaService {
 
     }
 
-    private List<SoggettoDto> getCoinvolgimenti(Istanza istanza) {
+    private List<SoggettoDto> getCoinvolgimenti(Istanza istanza) throws SvildepException {
         List<SoggettoDto> soggetti = new ArrayList<>();
         coinvolgimentoSoggettoRepository.findByIstanza(istanza).forEach(coinvolgimentoSoggetto -> {
             soggetti.add(findSoggetto(coinvolgimentoSoggetto));
@@ -70,9 +73,10 @@ public class IstanzaServiceImpl implements IstanzaService {
         return soggetti;
     }
 
-    private SoggettoDto findSoggetto(CoinvolgimentoSoggetto coinvolgimentoSoggetto) {
+    private SoggettoDto findSoggetto(CoinvolgimentoSoggetto coinvolgimentoSoggetto) throws SvildepException {
         SoggettoDto soggettoDto = null;
         Soggetto soggetto = coinvolgimentoSoggetto.getSoggetto();
+        if (soggetto == null) { throw new SvildepException(Messages.soggettoNonPresente); }
         switch (soggetto.getTipoSoggetto().getCodiceTipo()) {
             case TSF: {
                 soggettoDto = findSoggettoFisico(soggetto);
@@ -93,47 +97,44 @@ public class IstanzaServiceImpl implements IstanzaService {
         return soggettoDto;
     }
 
-    private SoggettoGiuridicoDto findSoggettoGiuridico(Soggetto soggetto) {
+    private SoggettoGiuridicoDto findSoggettoGiuridico(Soggetto soggetto) throws SvildepException {
         AtomicReference<SoggettoGiuridicoDto> reference = new AtomicReference<>();
-        soggettoGiuridicoRepository.findBySoggetto(soggetto).ifPresent(soggettoGiuridico -> {
+        soggettoGiuridicoRepository.findBySoggetto(soggetto).ifPresentOrElse(soggettoGiuridico -> {
             SoggettoGiuridicoDto soggettoGiuridicoDto = soggettoGiuridicoMapper.mapEntityToDto(soggettoGiuridico);
-            indirizzoRepository.findBySoggetto(soggetto).ifPresent(indirizzo -> {
+            indirizzoRepository.findBySoggetto(soggetto).ifPresentOrElse(indirizzo -> {
                 soggettoGiuridicoDto.setIndirizzo(indirizzoMapper.mapEntityToDto(indirizzo));
-            });
-            sedeRepository.findBySoggettoGiuridico(soggettoGiuridico).ifPresent(sede -> {
+            }, () -> { throw new SvildepException(Messages.soggettoNonPresente); });
+            sedeRepository.findBySoggettoGiuridico(soggettoGiuridico).ifPresentOrElse(sede -> {
                 soggettoGiuridicoDto.setProgressivoSede(sede.getProgressivoSede().toString());
                 soggettoGiuridicoDto.setTipoSede(sede.getTipoSede().getDescrizioneTipoSede());
-            });
+            }, () -> { throw new SvildepException(Messages.soggettoNonPresente); });
             reference.set(soggettoGiuridicoDto);
-        });
+        }, () -> { throw new SvildepException(Messages.soggettoNonPresente); });
         return reference.get();
     }
 
-    private SoggettoFisicoDto findSoggettoFisico(Soggetto soggetto) {
+    private SoggettoFisicoDto findSoggettoFisico(Soggetto soggetto) throws SvildepException {
         AtomicReference<SoggettoFisicoDto> reference = new AtomicReference<>();
-        soggettoFisicoRepository.findBySoggetto(soggetto).ifPresent(soggettoFisico -> {
+        soggettoFisicoRepository.findBySoggetto(soggetto).ifPresentOrElse(soggettoFisico -> {
             SoggettoFisicoDto soggettoFisicoDto = soggettoFisicoMapper.mapEntityToDto(soggettoFisico);
             indirizzoRepository.findBySoggetto(soggetto).ifPresent(value -> soggettoFisicoDto.setIndirizzo(indirizzoMapper.mapEntityToDto(value)));
             reference.set(soggettoFisicoDto);
-        });
+        }, () -> { throw new SvildepException(Messages.soggettoNonPresente); });
         return reference.get();
     }
 
-    private DittaIndividualeDto findDittaIndividuale(Soggetto soggetto) {
+    private DittaIndividualeDto findDittaIndividuale(Soggetto soggetto) throws SvildepException {
         AtomicReference<DittaIndividualeDto> reference = new AtomicReference<>();
-        DittaIndividualeDto dittaIndividualeDto = new DittaIndividualeDto();
-        soggettoGiuridicoRepository.findBySoggetto(soggetto).ifPresent(soggettoGiuridico -> {
-            dittaIndividualeDto.setPartitaIva(soggettoGiuridico.getPartitaIVA());
-            dittaIndividualeDto.setDenominazione(soggettoGiuridico.getDenominazioneDitta());
-            sedeRepository.findBySoggettoGiuridico(soggettoGiuridico).ifPresent(sede -> {
+        soggettoGiuridicoRepository.findBySoggetto(soggetto).ifPresentOrElse(soggettoGiuridico -> {
+            DittaIndividualeDto dittaIndividualeDto = dittaIndividualeMapper.mapEntityToDto(soggettoGiuridico);
+            sedeRepository.findBySoggettoGiuridico(soggettoGiuridico).ifPresentOrElse(sede -> {
                 Comune comune = sede.getComune();
                 dittaIndividualeDto.setComuneSede(comune.getDenominazioneComune());
                 dittaIndividualeDto.setProvinciaSede(comune.getProvincia().getDenominazioneProvincia());
-            });
+            }, () -> { throw new SvildepException(Messages.soggettoNonPresente); });
             reference.set(dittaIndividualeDto);
-        });
+        }, () -> { throw new SvildepException(Messages.soggettoNonPresente); });
         return reference.get();
     }
-
 
 }
