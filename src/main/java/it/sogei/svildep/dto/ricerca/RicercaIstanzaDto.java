@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public abstract class RicercaIstanzaDto extends SvildepDto {
+public class RicercaIstanzaDto extends SvildepDto {
 
     private String dataDa;
     private String dataA;

@@ -141,10 +141,14 @@ public class IstanzaService implements IIstanzaService {
         long numeroDepositoNazionaleA = Long.parseLong(ricercaIstanzaDto.getNumeroDepositoNazionaleA());
         List<Istanza> istanzeTrovate = istanzaRepository.findByQuery(
                 dataDa, dataA,
-                numeroDepositoNazionaleDa, numeroDepositoNazionaleA,
-                istanzaExample.getTipo().getId(), istanzaExample.getStato().getId(), istanzaExample.getCategoriaDeposito().getId(),
-                istanzaExample.getInserimentoManuale()
+                numeroDepositoNazionaleDa, numeroDepositoNazionaleA
         );
+//        List<Istanza> istanzeTrovate = istanzaRepository.findByQuery(
+//                dataDa, dataA,
+//                numeroDepositoNazionaleDa, numeroDepositoNazionaleA,
+//                istanzaExample.getTipo().getId(), istanzaExample.getStato().getId(), istanzaExample.getCategoriaDeposito().getId(),
+//                istanzaExample.getInserimentoManuale()
+//        );
         // TODO(ricercaIstanzaDto.getRicercaIstanzaPerSoggettoDto());
         return istanzaTrovataMapper.mapEntityToDto(istanzeTrovate);
     }

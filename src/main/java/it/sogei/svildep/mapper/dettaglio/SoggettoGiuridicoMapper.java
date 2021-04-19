@@ -13,7 +13,7 @@ public class SoggettoGiuridicoMapper extends SoggettoMapper<SoggettoGiuridico, I
     public IstanzaDettaglioSoggettoGiuridicoDto mapEntityToDtoImpl(SoggettoGiuridico entity) {
         IstanzaDettaglioSoggettoGiuridicoDto dto = mapSoggettoToDto(entity.getSoggetto(), new IstanzaDettaglioSoggettoGiuridicoDto());
         dto.setRagioneSociale(entity.getRagioneSociale());
-        dto.setNaturaGiuridica(entity.getNaturaGiuridica().getDenominazioneNaturaGiuridica());
+        dto.setNaturaGiuridica(entity.getNaturaGiuridica().getDenominazione());
         dto.setPartitaIva(entity.getPartitaIVA());
         dto.setCciaa(entity.getCCIAA());
         dto.setDenominazione(entity.getDenominazioneDitta());
