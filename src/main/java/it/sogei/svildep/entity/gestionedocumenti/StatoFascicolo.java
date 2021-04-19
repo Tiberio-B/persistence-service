@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -20,4 +21,6 @@ public class StatoFascicolo extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_FASCICOLO")
     private String descrizioneStatoFascicolo;
+    @OneToMany(mappedBy = "statoFascicolo")
+    private List<Fascicolo> fascicoli;
 }

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -24,4 +25,6 @@ public class StatoIstanza extends BaseEntity {
     @Column(name = "CODI_CODICE_STATO_ISTANZA")
     @Enumerated(EnumType.STRING)
     private FlagStatoIstanza codice;
+    @OneToMany(mappedBy = "stato")
+    private List<Istanza> istanze;
 }

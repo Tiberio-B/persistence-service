@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter
@@ -25,4 +26,6 @@ public class Opera extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_REGIONI_OPERE")
     private Regione regione;
+    @OneToMany(mappedBy = "opera")
+    private List<Istanza> istanze;
 }

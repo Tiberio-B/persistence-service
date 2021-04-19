@@ -2,11 +2,13 @@ package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.enums.FlagCategoriaDeposito;
+import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -24,4 +26,8 @@ public class CategoriaDeposito extends BaseEntity {
     @Column(name = "CODI_CODICE_CATEGORIA_DEPOSITO")
     @Enumerated(EnumType.STRING)
     private FlagCategoriaDeposito codiceCategoria;
+    @OneToMany(mappedBy = "categoriaDeposito")
+    private List<Istanza> istanze;
+    @OneToMany(mappedBy = "categoriaDeposito")
+    private List<Deposito> depositi;
 }

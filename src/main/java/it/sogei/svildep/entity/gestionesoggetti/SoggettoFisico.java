@@ -2,8 +2,6 @@ package it.sogei.svildep.entity.gestionesoggetti;
 
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.enums.FlagSessoMF;
-import it.sogei.svildep.entity.gestionesoggetti.Soggetto;
-import it.sogei.svildep.entity.gestionesoggetti.SoggettoGiuridico;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,14 +26,12 @@ public class SoggettoFisico extends BaseEntity {
     private String cognome;
     @Column(name = "DATA_NASCITA")
     private LocalDate dataNascita;
-
     @ManyToOne
     @JoinColumn(name = "FK1_COMUNI_SOGGETTI_FISICI")
     private Comune comuneNascita;
     @ManyToOne
     @JoinColumn(name = "FK1_STATI_ESTERI_SOGGETTI_FISICI")
     private StatoEstero statoEsteroNascita;
-
     @Column(name = "FLAG_SESSO_MF")
     @Enumerated(EnumType.STRING)
     private FlagSessoMF flagSessoMF;
@@ -45,4 +41,7 @@ public class SoggettoFisico extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "FK1_SOGGETTI_GIURIDICI_SOGGETTI_FISICI")
     private SoggettoGiuridico soggettoGiuridico;
+    @OneToOne
+    @JoinColumn(name = "FK1_SOGGETTI_VARIATI_SOGGETTI_FISICI")
+    private SoggettoFisico soggettoNuovo;
 }

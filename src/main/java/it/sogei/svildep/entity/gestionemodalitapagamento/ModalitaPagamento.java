@@ -1,6 +1,7 @@
 package it.sogei.svildep.entity.gestionemodalitapagamento;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,4 +22,6 @@ public class ModalitaPagamento extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_MODALITA_PAGAMENTO_MODALITA_PAGAMENTO")
     private TipoModalitaPagamento tipoModalitaPagamento;
+    @OneToOne(mappedBy = "modalitaPagamento")
+    private Istanza istanza;
 }

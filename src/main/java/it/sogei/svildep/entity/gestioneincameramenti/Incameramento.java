@@ -3,13 +3,15 @@ package it.sogei.svildep.entity.gestioneincameramenti;
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.gestionedepositi.Deposito;
 import it.sogei.svildep.entity.gestionedepositi.DirittoSoggetto;
-import it.sogei.svildep.entity.gestioneutenti.RTS;
+import it.sogei.svildep.entity.gestionedocumenti.Fascicolo;
+import it.sogei.svildep.entity.gestioneutenti.Rts;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -33,11 +35,15 @@ public class Incameramento extends BaseEntity {
     private Deposito deposito;
     @ManyToOne
     @JoinColumn(name = "FK1_RTS_INCAMERAMENTI")
-    private RTS rts;
+    private Rts rts;
     @ManyToOne
     @JoinColumn(name = "FK1_DIRITTI_SOGGETTO_INCAMERAMENTI")
     private DirittoSoggetto dirittoSoggetto;
     @ManyToOne
     @JoinColumn(name = "FK1_STATI_INCAMERAMENTO_INCAMERAMENTI")
     private StatoIncameramento statoIncameramento;
+    @OneToMany(mappedBy = "incameramento")
+    private List<Fascicolo> fascicoli;
+
+//    TODO: Da completare il mapping
 }

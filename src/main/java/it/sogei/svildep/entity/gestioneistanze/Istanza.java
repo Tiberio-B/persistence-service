@@ -5,17 +5,20 @@ import it.sogei.svildep.entity.enums.FlagSN;
 import it.sogei.svildep.entity.gestionedepositi.CategoriaDeposito;
 import it.sogei.svildep.entity.gestionedepositi.DatoCatastale;
 import it.sogei.svildep.entity.gestionedepositi.Deposito;
+import it.sogei.svildep.entity.gestionedocumenti.Fascicolo;
+import it.sogei.svildep.entity.gestioneutenti.Rts;
 import it.sogei.svildep.entity.gestionemodalitapagamento.ModalitaPagamento;
-import it.sogei.svildep.entity.gestioneutenti.RTS;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @Table(name = "D_ISTANZE")
 public class Istanza extends BaseEntity {
@@ -25,12 +28,10 @@ public class Istanza extends BaseEntity {
     @EqualsAndHashCode.Include
     @Column(name = "PK_SEQU_ID_ISTANZA")
     private Long id;
-
     @Column(name = "NUME_NUMERO_RICHIESTA")
     private Long numeroRichiesta;
     @Column(name = "DATA_RICHIESTA")
     private LocalDate dataRichiesta;
-
     @Column(name = "NUME_NUMERO_PROTOCOLLO")
     private Long numeroProtocollo;
     @Column(name = "DATA_PROTOCOLLO")
@@ -48,7 +49,6 @@ public class Istanza extends BaseEntity {
     @Column(name = "FLAG_INSERIMENTO_MANUALE_SN")
     @Enumerated(EnumType.STRING)
     private FlagSN inserimentoManuale;
-
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_ISTANZE")
     private Deposito deposito;
@@ -66,21 +66,22 @@ public class Istanza extends BaseEntity {
     private ModalitaPagamento modalitaPagamento;
     @ManyToOne
     @JoinColumn(name = "FK1_RTS_INOLTRO_ISTANZE")
-    private RTS rtsInoltro;
+    private Rts rtsInoltro;
     @ManyToOne
     @JoinColumn(name = "FK2_RTS_COMPETENTE_ISTANZE")
-    private RTS rtsCompetente;
-//    @ManyToOne
-//    @JoinColumn(name = "FK1_BENI_ESPROPRIATI_ISTANZE")
-//    private BeneEspropriato beneEspropriato;
+    private Rts rtsCompetente;
     @ManyToOne
     @JoinColumn(name = "FK1_DATI_CATASTALI_ISTANZE")
-    private DatoCatastale datoCatastale;
+    private DatoCatastale beneEspropriato;
     @ManyToOne
     @JoinColumn(name = "FK1_QUALITA_RICHIEDENTI_ISTANZE")
     private QualitaRichiedente qualitaRichiedente;
     @ManyToOne
     @JoinColumn(name = "FK1_OPERE_ISTANZE")
     private Opera opera;
+    @OneToMany(mappedBy = "istanza")
+    private List<Fascicolo> fascicoli;
+    @OneToMany(mappedBy = "istanza")
+    private List<CoinvolgimentoSoggetto> coinvolgimenti;
     //TODO: serve il mandato? SI
 }

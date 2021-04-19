@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -32,5 +33,7 @@ public class SoggettoGiuridico extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_NATURE_GIURIDICHE_SOGGETTI_GIURIDICI")
     private NaturaGiuridica naturaGiuridica;
+    @OneToMany(mappedBy = "soggettoGiuridico")
+    private List<Sede> sedi;
 
 }

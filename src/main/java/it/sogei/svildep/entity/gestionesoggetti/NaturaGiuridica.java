@@ -25,7 +25,7 @@ public class NaturaGiuridica extends BaseEntity {
     @Column(name = "DATA_FINE_VALIDITA")
     private LocalDate dataFineValidita;
     @Column(name = "DESC_DENOMINAZIONE_NATURA_GIURIDICA")
-    private String denominazioneNaturaGiuridica;
+    private String denominazione;
     @Column(name = "FLAG_CHIUSURA_CA")
     @Enumerated(EnumType.STRING)
     private FlagCA flagChiusuraCA;

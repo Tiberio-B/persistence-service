@@ -1,12 +1,15 @@
 package it.sogei.svildep.entity.gestionesoggetti;
 
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.gestionedepositi.DatoCatastale;
+import it.sogei.svildep.entity.gestioneutenti.Rts;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -32,4 +35,12 @@ public class Comune extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_PROVINCE_COMUNI")
     private Provincia provincia;
+    @OneToMany(mappedBy = "comune")
+    private List<DatoCatastale> datiCatastali;
+    @OneToMany(mappedBy = "comune")
+    private List<Rts> rtsList;
+    @OneToMany(mappedBy = "comune")
+    private List<Indirizzo> indirizzi;
+    @OneToMany(mappedBy = "comuneNascita")
+    private List<SoggettoFisico> soggettiFisici;
 }

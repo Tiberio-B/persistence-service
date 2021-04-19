@@ -20,7 +20,4 @@ public class StatoIncameramento extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_INCAMERAMENTO")
     private String descrizioneStatoIncameramento;
-    @ManyToOne
-    @JoinColumn(name = "FK1_RUOLI_STATI_INCAMERAMENTO")
-    private StatoIncameramento statoIncameramento;
 }

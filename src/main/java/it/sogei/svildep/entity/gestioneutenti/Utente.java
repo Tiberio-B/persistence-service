@@ -38,7 +38,7 @@ public class Utente extends BaseEntity {
     private Ruolo ruolo;
     @ManyToOne
     @JoinColumn(name = "FK1_RTS_UTENTI")
-    private RTS rts;
+    private Rts rts;
     @ManyToOne
     @JoinColumn(name = "FK1_TITOLI_UTENTI")
     private Titolo titolo;

@@ -24,10 +24,10 @@ public class Sede extends BaseEntity {
     @JoinColumn(name = "FK1_TIPI_SEDE_SEDI")
     private TipoSede tipoSede;
     @ManyToOne
-    @JoinColumn(name = "FK1_COMUNI_SEDI")
-    private Comune comune;
-    @ManyToOne
     @JoinColumn(name = "FK1_SOGGETTI_GIURIDICI_SEDI")
     private SoggettoGiuridico soggettoGiuridico;
+    @ManyToOne
+    @JoinColumn(name = "FK1_INDIRIZZI_SEDI")
+    private Indirizzo indirizzo;
 
 }

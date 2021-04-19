@@ -7,7 +7,7 @@ import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import it.sogei.svildep.entity.gestionemandati.AccertamentoDM40;
 import it.sogei.svildep.entity.gestionemandati.Mandato;
 import it.sogei.svildep.entity.gestionepignoramenti.Pignoramento;
-import it.sogei.svildep.entity.gestioneutenti.RTS;
+import it.sogei.svildep.entity.gestioneutenti.Rts;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +36,7 @@ public class Fascicolo extends BaseEntity {
     private StatoFascicolo statoFascicolo;
     @ManyToOne
     @JoinColumn(name = "FK1_RTS_FASCICOLI")
-    private RTS rts;
+    private Rts rts;
     @ManyToOne
     @JoinColumn(name = "FK1_DEPOSITI_FASCICOLI")
     private Deposito deposito;

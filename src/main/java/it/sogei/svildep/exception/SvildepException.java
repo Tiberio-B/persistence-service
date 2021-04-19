@@ -1,6 +1,5 @@
 package it.sogei.svildep.exception;
 
-import it.sogei.svildep.dto.MessageDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

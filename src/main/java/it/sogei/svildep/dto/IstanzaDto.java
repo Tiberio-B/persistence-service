@@ -7,13 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class IstanzaDto{
+public abstract class IstanzaDto extends SvildepDto {
 
-    private Boolean inserimentoManuale;
-
-    private String qualitaRichiedenteId;
-    private String tipoId;
-    private String statoId;
+    private String inserimentoManuale;
 
     private String numeroRichiesta;
     private String dataRichiesta;
@@ -24,6 +20,11 @@ public class IstanzaDto{
     private String importoDeposito;
     private String causaleDeposito;
 
-    private String categoriaDepositoId;
+    private String categoriaDeposito;
+
+    private String stato;
+
+    private String rtsRicevente;
+    private String rtsCompetente;
 
 }

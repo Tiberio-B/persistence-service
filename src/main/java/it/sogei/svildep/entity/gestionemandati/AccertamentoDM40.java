@@ -2,12 +2,14 @@ package it.sogei.svildep.entity.gestionemandati;
 
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.enums.FlagSN;
+import it.sogei.svildep.entity.gestionedocumenti.Fascicolo;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -47,4 +49,6 @@ public class AccertamentoDM40 extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_ACCERTAMENTO_DM40")
     private TipoAccertamentoDM40 tipoAccertamentoDM40;
+    @OneToMany(mappedBy = "accertamentoDM40")
+    private List<Fascicolo> fascicoli;
 }

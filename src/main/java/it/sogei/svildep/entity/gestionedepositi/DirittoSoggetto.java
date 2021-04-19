@@ -1,7 +1,6 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
-import it.sogei.svildep.entity.gestioneistanze.Istanza;
 import it.sogei.svildep.entity.gestionesoggetti.Soggetto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

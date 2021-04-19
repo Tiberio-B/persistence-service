@@ -1,12 +1,12 @@
 package it.sogei.svildep.entity.gestionesoggetti;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import it.sogei.svildep.entity.base.BaseEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -34,7 +34,6 @@ public class Indirizzo extends BaseEntity {
     private TipoIndirizzo tipoIndirizzo;
     @ManyToOne
     @JoinColumn(name = "FK1_SOGGETTI_INDIRIZZI")
-    @JsonIgnore
     private Soggetto soggetto;
     @ManyToOne
     @JoinColumn(name = "FK1_COMUNI_INDIRIZZI")
@@ -42,4 +41,6 @@ public class Indirizzo extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_STATI_ESTERI_INDIRIZZI")
     private StatoEstero statoEstero;
+    @OneToMany(mappedBy = "indirizzo")
+    private List<Sede> sedi;
 }

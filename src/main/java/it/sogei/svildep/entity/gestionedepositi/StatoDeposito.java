@@ -1,12 +1,12 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
 import it.sogei.svildep.entity.base.BaseEntity;
-import it.sogei.svildep.entity.gestioneutenti.Ruolo;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -21,7 +21,6 @@ public class StatoDeposito extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DESCRIZIONE_STATO_DEPOSITO")
     private String descrizioneStatoDeposito;
-    @ManyToOne
-    @JoinColumn(name = "FK1_RUOLI_STATI_DEPOSITO")
-    private Ruolo ruolo;
+    @OneToMany(mappedBy = "statoDeposito")
+    private List<Deposito> depositi;
 }

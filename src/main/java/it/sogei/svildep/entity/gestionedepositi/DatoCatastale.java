@@ -1,12 +1,16 @@
 package it.sogei.svildep.entity.gestionedepositi;
 
+
 import it.sogei.svildep.entity.base.BaseEntity;
+import it.sogei.svildep.entity.gestioneistanze.Istanza;
+import it.sogei.svildep.entity.gestioneistanze.ProprietarioCatastale;
 import it.sogei.svildep.entity.gestionesoggetti.Comune;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -33,4 +37,10 @@ public class DatoCatastale extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_COMUNI_DATI_CATASTALI")
     private Comune comune;
+    @OneToOne(mappedBy = "datoCatastale")
+    private Deposito deposito;
+    @OneToMany(mappedBy = "beneEspropriato")
+    private List<Istanza> istanze;
+    @OneToMany(mappedBy = "beneEspropriato")
+    private List<ProprietarioCatastale> proprietari;
 }

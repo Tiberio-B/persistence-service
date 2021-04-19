@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter
@@ -25,4 +27,11 @@ public class Recapito extends BaseEntity {
     private String pec;
     @Column(name = "INDI_EMAIL")
     private String email;
+    @Column(name = "DATA_VALIDITA_DA")
+    private LocalDate dataValiditaDa;
+    @Column(name = "DATA_VALIDITA_A")
+    private LocalDate dataValiditaA;
+    @OneToMany(mappedBy = "recapito")
+    private List<Soggetto> soggetti;
+
 }

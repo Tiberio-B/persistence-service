@@ -2,6 +2,7 @@ package it.sogei.svildep.entity.gestioneistanze;
 
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.enums.FlagSN;
+import it.sogei.svildep.entity.gestionedepositi.DatoCatastale;
 import it.sogei.svildep.entity.gestionedocumenti.Fascicolo;
 import it.sogei.svildep.entity.gestionesoggetti.TipoSoggetto;
 import lombok.EqualsAndHashCode;
@@ -32,8 +33,10 @@ public class ProprietarioCatastale extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_TIPI_SOGGETTO_PROPRIETARI_CATASTALI")
     private TipoSoggetto tipoSoggetto;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "FK1_FASCICOLI_PROPRIETARI_CATASTALI")
     private Fascicolo fascicolo;
-
+    @ManyToOne
+    @JoinColumn(name = "FK1_DATI_CATASTALI_PROPRIETARI_CATASTALI")
+    private DatoCatastale beneEspropriato;
 }

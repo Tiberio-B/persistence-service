@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -20,4 +21,6 @@ public class StatoEstero extends BaseEntity {
     private Long id;
     @Column(name = "DESC_DENOMINAZIONE_STATO_ESTERO")
     private String denominazioneStatoEstero;
+    @OneToMany(mappedBy = "statoEsteroNascita")
+    private List<SoggettoFisico> soggettiFisici;
 }

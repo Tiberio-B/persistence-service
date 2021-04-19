@@ -3,13 +3,16 @@ package it.sogei.svildep.entity.gestionedepositi;
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.enums.FlagBC;
 import it.sogei.svildep.entity.enums.FlagSN;
-import it.sogei.svildep.entity.gestioneutenti.RTS;
+import it.sogei.svildep.entity.gestionedocumenti.Fascicolo;
+import it.sogei.svildep.entity.gestioneistanze.Istanza;
+import it.sogei.svildep.entity.gestioneutenti.Rts;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -88,8 +91,14 @@ public class Deposito extends BaseEntity {
     private CategoriaDeposito categoriaDeposito;
     @ManyToOne
     @JoinColumn(name = "FK1_RTS_COSTITUZIONE_DEPOSITI")
-    private RTS rtsCostituzione;
+    private Rts rtsCostituzione;
     @ManyToOne
     @JoinColumn(name = "FK2_RTS_COMPETENTE_DEPOSITI")
-    private RTS rtsCompetente;
+    private Rts rtsCompetente;
+    @OneToMany(mappedBy = "deposito")
+    private List<Istanza> istanze;
+    @OneToMany(mappedBy = "deposito")
+    private List<Fascicolo> fascicoli;
+    @OneToMany(mappedBy = "deposito")
+    private List<DirittoSoggetto> dirittiSoggetto;
 }

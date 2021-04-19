@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Getter @Setter
@@ -25,5 +25,5 @@ public class Provincia extends BaseEntity {
     @JoinColumn(name = "FK1_REGIONI_PROVINCE")
     private Regione regione;
     @OneToMany(mappedBy = "provincia")
-    private Set<Comune> listaComuni;
+    private List<Comune> listaComuni;
 }

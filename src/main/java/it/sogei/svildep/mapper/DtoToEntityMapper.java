@@ -1,12 +1,13 @@
 package it.sogei.svildep.mapper;
 
+import it.sogei.svildep.dto.SvildepDto;
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.exception.SvildepException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public interface DtoToEntityMapper<E extends BaseEntity, D> {
+public interface DtoToEntityMapper<E extends BaseEntity, D extends SvildepDto> {
 
     E mapDtoToEntityImpl(D dto) throws RuntimeException;
 

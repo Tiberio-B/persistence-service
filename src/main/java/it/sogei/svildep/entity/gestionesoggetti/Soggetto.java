@@ -2,6 +2,8 @@ package it.sogei.svildep.entity.gestionesoggetti;
 
 import it.sogei.svildep.entity.base.BaseEntity;
 import it.sogei.svildep.entity.enums.FlagSN;
+import it.sogei.svildep.entity.gestionedepositi.DirittoSoggetto;
+import it.sogei.svildep.entity.gestioneistanze.CoinvolgimentoSoggetto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,4 +33,12 @@ public class Soggetto extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "FK1_RECAPITI_SOGGETTI")
     private Recapito recapito;
+    @OneToMany(mappedBy = "soggetto")
+    private List<DirittoSoggetto> dirittiSoggetto;
+    @OneToMany(mappedBy = "soggetto")
+    private List<CoinvolgimentoSoggetto> coinvolgimenti;
+    @OneToOne(mappedBy = "soggetto")
+    private SoggettoFisico soggettoFisico;
+    @OneToOne(mappedBy = "soggetto")
+    private SoggettoGiuridico soggettoGiuridico;
 }

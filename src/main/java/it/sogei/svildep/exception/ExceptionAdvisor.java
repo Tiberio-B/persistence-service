@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice(basePackages = "it.sogei.svildep.controller")
+@ControllerAdvice(basePackages = "it.sogei.svildep")
 public class ExceptionAdvisor {
 
 	@ExceptionHandler(SvildepException.class)
